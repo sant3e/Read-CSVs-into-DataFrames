@@ -1,8 +1,9 @@
+# Method 1, using glob:
 import glob
 import pandas as pd
 
 # specify path to csv files
-path = "C:/Users/tdiacon/Documents/glassdoor-scraper/src/output/"
+path = "C:/folder_location/"
 
 # csv files in the path
 files = glob.glob(path + "/*.csv")
@@ -18,3 +19,21 @@ for filename in files:
     
 # converting content to dataframe
 data_frame = pd.concat(content)
+print(data_frame)
+
+
+# Method 2, using os:
+import pandas as pd
+import os
+path = "C:/folder_location/"
+  
+# specifying an empty list for content
+df_list = []
+for file in os.listdir(path):
+      
+    # reading content into data frame
+    df = pd.read_csv(file)
+    df_list.append(df)
+  
+final_content = df.append(df for df in df_list)
+print(final_content)
