@@ -8,7 +8,7 @@ path = "C:/folder_location/"
 # csv files in the path
 files = glob.glob(path + "/*.csv")
 
-# define an empty list to sore content
+# define an empty list to store content
 data_frame = pd.DataFrame()
 content = []
 
